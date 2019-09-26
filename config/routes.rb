@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   namespace :api do 
     resources :accounts, only: [:index, :update]
+    get 'friends', to: 'accounts#friends'
   end
 end

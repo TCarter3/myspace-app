@@ -10,4 +10,8 @@ class Api::AccountsController < ApplicationController
     current_user.friends << params[:id].to_i
     current_user.save
   end
+
+  def friends
+    render json: User.liked(current_user.friends)
+  end
 end
