@@ -1,7 +1,10 @@
 import React from "react";
-import { Container, Header, Button, Icon, Card, Image, } from "semantic-ui-react";
+import { Container, Header, Icon, Card, Image, } from "semantic-ui-react";
 import styled from "styled-components";
 import axios from "axios";
+import { Navbar, Nav, Form, FormControl, Button, } from "react-bootstrap";
+import UserNav from "./UserNav";
+
 
 class Home extends React.Component {
     state = { accounts: [], };
@@ -45,6 +48,19 @@ class Home extends React.Component {
               </Container>
               <br/>
               <Container>
+                <UserNav  />
+              {/* <Navbar bg="dark" variant="dark">
+                <Navbar.Brand href="/">Discover</Navbar.Brand>
+                <Nav className="mr-auto">
+                  <Nav.Link href="/friends">My Friends</Nav.Link>
+                  <Nav.Link href="#features">Features</Nav.Link>
+                  <Nav.Link href="#pricing">Pricing</Nav.Link>
+                </Nav>
+                <Form inline>
+                  <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                  <Button variant="outline-info">Search</Button>
+                </Form>
+              </Navbar> */}
               <Card.Group columns={2} itemsPerRow={4}>
               { accounts.map( account =>
             <Card key={account.id}>
@@ -58,10 +74,10 @@ class Home extends React.Component {
                   </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                  <Button color="red" icon basic onClick={() => this.weDislike(account.id)}>
+                  <Button variant="danger" icon basic onClick={() => this.weDislike(account.id)}>
                     <Icon name="thumbs down" />
                   </Button>
-                  <Button color="green" icon basic onClick={() => this.weLike(account.id)}>
+                  <Button variant="success" icon basic onClick={() => this.weLike(account.id)}>
                     <Icon name="thumbs up" />
                   </Button>
               </Card.Content>

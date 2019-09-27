@@ -8,6 +8,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem "devise_token_auth"
+gem 'kaminari'
+gem 'bootstrap', '~> 4.0.0'
 
 group :development, :test do
   gem 'pry-rails'

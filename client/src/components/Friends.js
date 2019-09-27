@@ -2,6 +2,7 @@ import React from "react";
 import { Header, Card, Image, Divider, Container, } from "semantic-ui-react";
 import styled from "styled-components";
 import axios from "axios";
+import UserNav from "./UserNav";
 
 class Friends extends React.Component {
     state = { accounts: [], };
@@ -18,7 +19,9 @@ class Friends extends React.Component {
           <StyleHeader as="h1">
               f r i e n d s:
           </StyleHeader>
+          <br/>
           <Container>
+            <UserNav />
         <Card.Group itemsPerRow={4}>
           { accounts.map( account =>
             <Card key={account.id}>

@@ -3,6 +3,7 @@ class Api::AccountsController < ApplicationController
 
   def index
     render json: User.random_account(current_user.friends)
+    @account = Account.order('created_at DESC').page(params[:page]).per(15)
 
   end
 
